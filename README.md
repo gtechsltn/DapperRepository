@@ -1,5 +1,11 @@
 # Dapper Repository
 
+Moq.Dapper helper extension
+
+https://github.com/gtechsltn/DapperRepository
+
+https://chatgpt.com/c/68a52a1c-b6c8-8331-826d-6d6bae6a24aa
+
 C# Dapper-friendly implementation with soft-delete methods that respects this unique constraint automatically.
 
 **This repository provides a complete solution for managing user data with soft-delete functionality, including advanced search capabilities, dynamic sorting, and pagination.**
