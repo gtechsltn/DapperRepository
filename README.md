@@ -16,9 +16,8 @@ C# Dapper-friendly implementation with soft-delete methods that respects this un
 + SQL Server Management Studio (SSMS)
 + Dapper for database operations
 + Serilog for logging
-+ xUnit for unit tests
++ Moq, FluentAssertions and xUnit for Unit Tests, Integration Tests
 + Moq.Dapper for mocking Dapper calls
-+ xUnit for integration tests
 
 # Feature Overview
 .NET 8 Console App that does exactly that:
