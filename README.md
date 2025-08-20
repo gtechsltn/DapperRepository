@@ -2,6 +2,12 @@
 + DapperRepository.csproj
 + DapperWrapperTesting.csproj
 
+Moq.Dapper helper extension
+
+https://github.com/gtechsltn/DapperRepository
+
+https://chatgpt.com/c/68a52a1c-b6c8-8331-826d-6d6bae6a24aa
+
 C# Dapper-friendly implementation with soft-delete methods that respects this unique constraint automatically.
 
 # DapperRepository.csproj
@@ -29,9 +35,8 @@ public class DapperWrapper : IDapperWrapper
 + SQL Server Management Studio (SSMS)
 + Dapper for database operations
 + Serilog for logging
-+ xUnit for unit tests
++ Moq, FluentAssertions and xUnit for Unit Tests, Integration Tests
 + Moq.Dapper for mocking Dapper calls
-+ xUnit for integration tests
 
 # Feature Overview
 .NET 8 Console App that does exactly that:
