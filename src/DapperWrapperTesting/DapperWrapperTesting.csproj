@@ -8,23 +8,18 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <StartupObject>DapperRepository.Program</StartupObject>
+    <StartupObject>DapperWrapperTesting.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Application\Interfaces\DapperGridReader.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Remove="appsettings.json" />
-    <None Remove="Scripts\001-CreateUserTable.sql" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="appsettings.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scripts\001-CreateUserTable.sql">
+    <Content Include="Scripts\001-CreateAllTables.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

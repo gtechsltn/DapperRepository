@@ -13,13 +13,13 @@ public class TestDatabaseFixture : IDisposable
         MasterConnection = @"Server=(localdb)\MSSQLLocalDB;Database=master;Trusted_Connection=True;Encrypt=True;TrustServerCertificate=True;";
 
         // LocalDB test database
-        DefaultConnection = @"Server=(localdb)\MSSQLLocalDB;Database=MyDatabaseTest;Trusted_Connection=True;Encrypt=True;TrustServerCertificate=True;";
+        DefaultConnection = @"Server=(localdb)\MSSQLLocalDB;Database=DapperRepositoryDbTest;Trusted_Connection=True;Encrypt=True;TrustServerCertificate=True;";
 
         // Ensure the database is created before any tests run
         using var conn = new SqlConnection(MasterConnection);
         conn.Open();
         var cmd = conn.CreateCommand();
-        cmd.CommandText = "IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = 'MyDatabaseTest') CREATE DATABASE MyDatabaseTest;";
+        cmd.CommandText = "IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = 'DapperRepositoryDbTest') CREATE DATABASE DapperRepositoryDbTest;";
         cmd.ExecuteNonQuery();
     }
 
@@ -61,7 +61,7 @@ public class TestDatabaseFixture : IDisposable
         using var conn = new SqlConnection(DefaultConnection);
         conn.Open();
         var cmd = conn.CreateCommand();
-        cmd.CommandText = "DROP DATABASE MyDatabaseTest;";
+        cmd.CommandText = "DROP DATABASE DapperRepositoryDbTest;";
         try { cmd.ExecuteNonQuery(); } catch { }
     }
 }

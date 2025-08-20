@@ -1,6 +1,25 @@
 # Dapper Repository
++ DapperRepository.csproj
++ DapperWrapperTesting.csproj
 
 C# Dapper-friendly implementation with soft-delete methods that respects this unique constraint automatically.
+
+# DapperRepository.csproj
+```
+public interface IDbConnection, IDbTransaction, IDbCommand, IDataReader, IDisposable
+public interface IDbConnectionFactory
+public interface IMultiResultReader
+public interface IDapperWrapper
+public class DapperWrapper : IDapperWrapper
+public class DapperGridReaderWrapper : IMultiResultReader
+```
+
+# DapperWrapperTesting.csproj
+```
+public interface IDbConnection, IDbTransaction, IDbCommand, IDataReader, IDisposable
+public interface IDapperWrapper
+public class DapperWrapper : IDapperWrapper
+```
 
 **This repository provides a complete solution for managing user data with soft-delete functionality, including advanced search capabilities, dynamic sorting, and pagination.**
 

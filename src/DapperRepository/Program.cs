@@ -51,12 +51,12 @@ public class Program
             .ReadFrom.Configuration(configuration)
             .CreateLogger();
 
-        var masterConnectionString = configuration.GetConnectionString("MasterConnection");
+        var masterConnection = configuration.GetConnectionString("MasterConnection");
         var defaultConnection = configuration.GetConnectionString("DefaultConnection");
         var scriptsFolder = configuration["Scripts:Folder"];
 
-        Log.Information("MasterConnection connection: {Conn}", masterConnectionString);
-        Log.Information("DB connection: {Conn}", defaultConnection);
+        Log.Information("MasterConnection connection: {Conn}", masterConnection);
+        Log.Information("DefaultConnection connection: {Conn}", defaultConnection);
         Log.Information("Scripts folder: {Folder}", scriptsFolder);
 
         try
@@ -71,9 +71,9 @@ public class Program
             Log.Information("Hello, Serilog!");
 
             // Validate configuration values to ensure they are not null or empty
-            if (string.IsNullOrWhiteSpace(masterConnectionString))
+            if (string.IsNullOrWhiteSpace(masterConnection))
             {
-                throw new ArgumentNullException(nameof(masterConnectionString), "MasterConnection connection string cannot be null or empty.");
+                throw new ArgumentNullException(nameof(masterConnection), "MasterConnection connection string cannot be null or empty.");
             }
 
             if (string.IsNullOrWhiteSpace(defaultConnection))
@@ -87,7 +87,7 @@ public class Program
             }
 
             // Call the method after validation
-            DbHelper.CreateDatabaseAndTables(masterConnectionString, defaultConnection, scriptsFolder);
+            DbHelper.CreateDatabaseAndTables(masterConnection, defaultConnection, scriptsFolder);
 
             UsageExamples(configuration);
         }

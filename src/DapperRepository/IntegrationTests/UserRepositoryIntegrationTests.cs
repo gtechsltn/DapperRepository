@@ -19,7 +19,7 @@ public class UserRepositoryIntegrationTests : IClassFixture<TestDatabaseFixture>
             var inMemorySettings = new Dictionary<string, string?>
             {
 { "ConnectionStrings:MasterConnection", "Server=(local);Database=master;Trusted_Connection=True;Encrypt=True;TrustServerCertificate=True;" },
-{ "ConnectionStrings:DefaultConnection", "Server=(local);Database=MyDatabase;Trusted_Connection=True;Encrypt=True;TrustServerCertificate=True;" },
+{ "ConnectionStrings:DefaultConnection", "Server=(local);Database=DapperRepositoryDb;Trusted_Connection=True;Encrypt=True;TrustServerCertificate=True;" },
 { "Scripts:Folder", "Scripts" }
             };
 
